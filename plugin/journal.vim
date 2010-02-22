@@ -2,11 +2,11 @@
 " Description: Encrypted journal based on calendar.vim and gnupg.vim
 " Maintainer:  Jeremy Cantrell <jmcantrell@gmail.com>
 
-if exists('loaded_journal')
+if exists('g:journal_loaded')
     finish
 endif
 
-let loaded_journal = 1
+let g:journal_loaded = 1
 
 let g:journal = []
 
@@ -17,12 +17,6 @@ if !exists("g:journal_directory")
     let g:journal_directory = '~/journal'
 endif
 
-if !hasmapto('<Plug>JournalToggle')
-    nmap <silent> <unique> <leader>jj <Plug>JournalToggle
-endif
-
-nnoremap <unique> <script> <Plug>JournalToggle <SID>JournalToggle
-nnoremap <SID>JournalToggle :JournalToggle<cr>
 command -bar JournalToggle :call s:JournalToggle()
 
 function! s:SID() "{{{1

@@ -1,0 +1,37 @@
+*journal.txt*  Encrypted journal based on calendar.vim and gnupg.vim
+
+Author:  Jeremy Cantrell <jmcantrell@gmail.com>                 *journal-author*
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                                             *journal* *journal.vim*
+
+The journal plugin provides a way to keep an encrypted journal organized by
+days. Upon activation, a calendar will be displayed on the left showing days
+on which entries are made.
+
+REQUIREMENTS                                              *journal-requirements*
+
+Before installing journal.vim, you need to install the following plugins:
+
+gnupg.vim     http://www.vim.org/scripts/script.php?script_id=661
+calendar.vim  http://www.vim.org/scripts/script.php?script_id=52
+
+COMMANDS                                                      *journal-commands*
+
+:JournalToggle          Toggle the journal view. You will see a calendar on the
+                        left side that shows dates that have entries. Place the
+                        cursor over a desired day and press <enter>.
+
+CONFIGURATION                                            *journal-configuration*
+
+g:journal_loaded                                              *g:journal_loaded*
+    If set in your |vimrc|, journal.vim is not loaded.
+
+g:journal_directory                                        *g:journal_directory*
+    This is the directory that contains your journal files (default: ~/journal).
+
+g:GPGDefaultRecipients
+    If set, these recipients are used as defaults when no other recipient is
+    defined. This variable is a Vim list. Default is unset.
+
+vim:tw=78:et:ft=help:norl:
