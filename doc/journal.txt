@@ -1,20 +1,23 @@
-*journal.txt*  Encrypted journal based on calendar.vim and gnupg.vim
+*journal.txt*  Journal based on calendar.vim
 
 Author:  Jeremy Cantrell <jmcantrell@gmail.com>                 *journal-author*
 License: Same terms as Vim itself (see |license|)
 
-INTRODUCTION                                             *journal* *journal.vim*
+INTRODUCTION                                               *journal* *journal.vim*
 
-The journal plugin provides a way to keep an encrypted journal organized by
-days. Upon activation, a calendar will be displayed on the left showing days
-on which entries are made.
+The journal plugin provides a way to keep a journal organized by days. Upon
+activation, a calendar will be displayed on the left showing days on which
+entries are made. Encryption is also supported.
 
 REQUIREMENTS                                              *journal-requirements*
 
-Before installing journal.vim, you need to install the following plugins:
+Before installing journal.vim, you need to install the following plugin:
+
+calendar.vim  http://www.vim.org/scripts/script.php?script_id=52
+
+To use encryption, you need to install GPG support:
 
 gnupg.vim     http://www.vim.org/scripts/script.php?script_id=661
-calendar.vim  http://www.vim.org/scripts/script.php?script_id=52
 
 COMMANDS                                                      *journal-commands*
 
@@ -28,7 +31,10 @@ g:journal_loaded                                              *g:journal_loaded*
     If set in your |vimrc|, journal.vim is not loaded.
 
 g:journal_directory                                        *g:journal_directory*
-    This is the directory that contains your journal files (default: ~/journal).
+    This is the directory that contains your journal files (default: ~/Journal).
+
+g:journal_encrypted                                        *g:journal_directory*
+    Encryption is disabled by default. To enable, set this variable.
 
 g:GPGDefaultRecipients
     If set, these recipients are used as defaults when no other recipient is

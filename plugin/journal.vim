@@ -14,7 +14,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !exists("g:journal_directory")
-    let g:journal_directory = '~/journal'
+    let g:journal_directory = '~/Journal'
 endif
 
 command -bar JournalToggle :call s:JournalToggle()
@@ -53,7 +53,8 @@ function! s:FormatDate(year, month, day) "{{{1
 endfunction
 
 function! s:JournalFilename(year, month, day) "{{{1
-    return expand(g:journal_directory).'/'.s:FormatDate(a:year, a:month, a:day).'.asc'
+    let ext = exists('g:journal_encrypted') ? 'asc' : 'txt'
+    return expand(g:journal_directory).'/'.s:FormatDate(a:year, a:month, a:day).'.'.ext
 endfunction
 
 function! s:JournalCalendarAction(day, month, year, week, dir) "{{{1
