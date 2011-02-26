@@ -33,7 +33,7 @@ g:journal_loaded                                         *g:journal_loaded*
 g:journal_directory                                      *g:journal_directory*
     This is the directory that contains your journal files (default: ~/Journal).
 
-g:journal_encrypted                                      *g:journal_directory*
+g:journal_encrypted                                      *g:journal_encrypted*
     Encryption is disabled by default. To enable, set this variable.
 
 g:GPGDefaultRecipients
