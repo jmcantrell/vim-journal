@@ -36,6 +36,9 @@ g:journal_directory                                      *g:journal_directory*
 g:journal_encrypted                                      *g:journal_encrypted*
     Encryption is disabled by default. To enable, set this variable.
 
+g:journal_extension                                      *g:journal_extension*
+    The filename extension (plain default: txt, encrypted default: asc).
+
 g:GPGDefaultRecipients
     If set, these recipients are used as defaults when no other recipient is
     defined. This variable is a Vim list. Default is unset.
