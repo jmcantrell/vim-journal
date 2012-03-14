@@ -17,6 +17,10 @@ if !exists("g:journal_directory")
     let g:journal_directory = '~/Journal'
 endif
 
+if !exists("g:journal_extension")
+    let g:journal_extension = exists('g:journal_encrypted') ? 'asc' : 'txt'
+endif
+
 command -bar JournalToggle :call s:JournalToggle()
 
 function! s:SID() "{{{1
@@ -53,8 +57,7 @@ function! s:FormatDate(year, month, day) "{{{1
 endfunction
 
 function! s:JournalFilename(year, month, day) "{{{1
-    let ext = exists('g:journal_encrypted') ? 'asc' : 'txt'
-    return expand(g:journal_directory).'/'.s:FormatDate(a:year, a:month, a:day).'.'.ext
+    return expand(g:journal_directory).'/'.s:FormatDate(a:year, a:month, a:day).'.'.g:journal_extension
 endfunction
 
 function! s:JournalCalendarAction(day, month, year, week, dir) "{{{1
