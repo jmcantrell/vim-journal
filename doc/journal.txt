@@ -1,15 +1,15 @@
 *journal.txt*  Journal based on calendar.vim
 
-Author:  Jeremy Cantrell <jmcantrell@gmail.com>          *journal-author*
+Author:  Jeremy Cantrell <jmcantrell@gmail.com>  *journal-author*
 License: Same terms as Vim itself (see |license|)
 
-INTRODUCTION                                             *journal* *journal.vim*
+INTRODUCTION                                     *journal* *journal.vim*
 
 The journal plugin provides a way to keep a journal organized by days. Upon
 activation, a calendar will be displayed on the left showing days on which
 entries are made. Encryption is also supported.
 
-REQUIREMENTS                                             *journal-requirements*
+REQUIREMENTS                                     *journal-requirements*
 
 Before installing journal.vim, you need to install the following plugin:
 
@@ -19,24 +19,25 @@ To use encryption, you need to install GPG support:
 
 gnupg.vim     http://www.vim.org/scripts/script.php?script_id=661
 
-COMMANDS                                                 *journal-commands*
+COMMANDS                                         *journal-commands*
 
-:JournalToggle          Toggle the journal view. You will see a calendar on the
-                        left side that shows dates that have entries. Place the
-                        cursor over a desired day and press <enter>.
+:JournalToggle                                   *:JournalToggle*
+    Toggle the journal view. You will see a calendar on the left side that
+    shows dates that have entries. Place the cursor over a desired day and
+    press <enter>.
 
-CONFIGURATION                                            *journal-configuration*
+CONFIGURATION                                    *journal-configuration*
 
-g:journal_loaded                                         *g:journal_loaded*
+g:journal_loaded                                 *g:journal_loaded*
     If set in your |vimrc|, journal.vim is not loaded.
 
-g:journal_directory                                      *g:journal_directory*
+g:journal_directory                              *g:journal_directory*
     This is the directory that contains your journal files (default: ~/Journal).
 
-g:journal_encrypted                                      *g:journal_encrypted*
+g:journal_encrypted                              *g:journal_encrypted*
     Encryption is disabled by default. To enable, set this variable.
 
-g:journal_extension                                      *g:journal_extension*
+g:journal_extension                              *g:journal_extension*
     The filename extension (plain default: txt, encrypted default: asc).
 
 g:GPGDefaultRecipients
