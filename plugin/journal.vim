@@ -70,7 +70,7 @@ function! s:JournalCalendarAction(day, month, year, week, dir) "{{{1
     let pair = s:JournalPair(bufnr('%'))
     let filename = s:JournalFilename(a:year, a:month, a:day)
     execute bufwinnr(pair[0]).'wincmd w'
-    execute 'edit '.filename
+    execute 'edit '.escape(filename, ' ')
 endfunction
 
 function! s:JournalCalendarSign(day, month, year) "{{{1
